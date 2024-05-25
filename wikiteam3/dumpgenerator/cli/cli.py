@@ -229,7 +229,18 @@ def getParameters(params=None) -> Tuple[Config, Dict]:
 
     # Create session
     mod_requests_text(requests)  # monkey patch
-    session = requests.Session()
+
+    class DummySession(requests.Session):
+        def __init__(self):
+            super().__init__()
+
+        def get(self, *args, **kwargs):
+            return requests.get(*args, **kwargs)
+
+        def request(self, *args, **kwargs):
+            return requests.request(*args, **kwargs)
+
+    session = DummySession()
 
     # Disable SSL verification
     if args.insecure:
