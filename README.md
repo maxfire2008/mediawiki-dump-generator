@@ -1,5 +1,7 @@
 # `MediaWiki Dump Generator`
 
+> :warning: This is a modified version of the dumper that supports some Wikis behind Cloudflare protection i.e., https://minecraft.wiki/
+
 **MediaWiki Dump Generator can archive wikis from the largest to the tiniest.**
 
 `MediaWiki Dump Generator` is an ongoing project to port the legacy [`wikiteam`](https://github.com/WikiTeam/wikiteam) toolset to Python 3 and PyPI to make it more accessible for today's archivers.
